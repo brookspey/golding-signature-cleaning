@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import GoogleReviews from "@/components/GoogleReviews";
 
 const services = [
   {
@@ -267,6 +268,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Google Reviews */}
+      <GoogleReviews />
 
       {/* Service Areas Section */}
       <section className="bg-navy py-16">
