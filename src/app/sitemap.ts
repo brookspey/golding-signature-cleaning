@@ -1,7 +1,28 @@
 import type { MetadataRoute } from "next";
 
+const cities = [
+  "west-palm-beach",
+  "boca-raton",
+  "delray-beach",
+  "boynton-beach",
+  "jupiter",
+  "wellington",
+  "palm-beach-gardens",
+  "lake-worth",
+  "royal-palm-beach",
+  "lantana",
+  "greenacres",
+];
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://www.thegoldingagency.com";
+
+  const cityPages: MetadataRoute.Sitemap = cities.map((city) => ({
+    url: `${baseUrl}/service-areas/${city}`,
+    lastModified: new Date(),
+    changeFrequency: "monthly",
+    priority: 0.8,
+  }));
 
   return [
     {
@@ -34,5 +55,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 0.8,
     },
+    ...cityPages,
   ];
 }

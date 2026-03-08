@@ -56,9 +56,17 @@ const galleryImages = [
 ];
 
 const serviceAreasList = [
-  "West Palm Beach", "Boca Raton", "Delray Beach", "Boynton Beach",
-  "Jupiter", "Wellington", "Palm Beach Gardens", "Lake Worth",
-  "Royal Palm Beach", "Lantana", "Greenacres",
+  { name: "West Palm Beach", slug: "west-palm-beach" },
+  { name: "Boca Raton", slug: "boca-raton" },
+  { name: "Delray Beach", slug: "delray-beach" },
+  { name: "Boynton Beach", slug: "boynton-beach" },
+  { name: "Jupiter", slug: "jupiter" },
+  { name: "Wellington", slug: "wellington" },
+  { name: "Palm Beach Gardens", slug: "palm-beach-gardens" },
+  { name: "Lake Worth", slug: "lake-worth" },
+  { name: "Royal Palm Beach", slug: "royal-palm-beach" },
+  { name: "Lantana", slug: "lantana" },
+  { name: "Greenacres", slug: "greenacres" },
 ];
 
 export default function Home() {
@@ -283,12 +291,13 @@ export default function Home() {
           </p>
           <div className="flex flex-wrap justify-center gap-3">
             {serviceAreasList.map((area) => (
-              <span
-                key={area}
-                className="rounded-full border border-gold/30 bg-white/5 px-5 py-2 text-sm text-white/90"
+              <Link
+                key={area.slug}
+                href={`/service-areas/${area.slug}`}
+                className="rounded-full border border-gold/30 bg-white/5 px-5 py-2 text-sm text-white/90 transition-colors hover:border-gold hover:bg-white/10"
               >
-                {area}, FL
-              </span>
+                {area.name}, FL
+              </Link>
             ))}
           </div>
           <Link
