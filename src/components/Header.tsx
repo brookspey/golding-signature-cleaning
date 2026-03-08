@@ -15,8 +15,8 @@ export default function Header() {
           <Image
             src="/images/logo.png"
             alt="Golding Signature Cleaning logo - house cleaning Palm Beach County FL"
-            width={60}
-            height={60}
+            width={200}
+            height={133}
             className="h-12 w-auto sm:h-14"
             priority
           />
