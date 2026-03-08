@@ -9,7 +9,7 @@ import { useEffect } from "react";
 // 4. Copy your widget ID (the part after "elfsight-app-" in the embed code)
 // 5. Replace the ID below with yours
 
-const ELFSIGHT_WIDGET_ID = ""; // e.g. "a1b2c3d4-e5f6-7890-abcd-ef1234567890"
+const ELFSIGHT_WIDGET_ID = "f7705d94-00de-429c-835b-db5a3efec87a";
 
 export default function GoogleReviews() {
   useEffect(() => {
