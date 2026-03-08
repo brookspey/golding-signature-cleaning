@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 
 export const metadata: Metadata = {
   title: "Residential Cleaning Services | Deep Clean, Airbnb & Move-Out | Palm Beach County",
@@ -61,9 +62,87 @@ const packages = [
   },
 ];
 
+const servicesJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      item: {
+        "@type": "Service",
+        name: "Standard Cleaning",
+        description:
+          "Routine residential cleaning covering dusting, sweeping, mopping, kitchen wipe-down, bathroom surface cleaning, and trash removal. Ideal for weekly, bi-weekly, or monthly upkeep.",
+        provider: { "@type": "HouseCleaningService", name: "Golding Signature Cleaning", url: "https://www.thegoldingagency.com" },
+        areaServed: { "@type": "Place", name: "Palm Beach County, FL" },
+        serviceType: "Standard House Cleaning",
+      },
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      item: {
+        "@type": "Service",
+        name: "Deep Cleaning",
+        description:
+          "Thorough cleaning that tackles built-up dirt and neglected areas including detailed bathroom scrubbing, baseboard cleaning, and kitchen deep clean. Recommended before starting recurring service.",
+        provider: { "@type": "HouseCleaningService", name: "Golding Signature Cleaning", url: "https://www.thegoldingagency.com" },
+        areaServed: { "@type": "Place", name: "Palm Beach County, FL" },
+        serviceType: "Deep House Cleaning",
+      },
+    },
+    {
+      "@type": "ListItem",
+      position: 3,
+      item: {
+        "@type": "Service",
+        name: "Move-Out Cleaning",
+        description:
+          "Comprehensive cleaning designed for move-outs, preparing the space for the next occupant with kitchen and bathroom deep clean, full floor cleaning, and surface wipe-down.",
+        provider: { "@type": "HouseCleaningService", name: "Golding Signature Cleaning", url: "https://www.thegoldingagency.com" },
+        areaServed: { "@type": "Place", name: "Palm Beach County, FL" },
+        serviceType: "Move-Out Cleaning",
+      },
+    },
+    {
+      "@type": "ListItem",
+      position: 4,
+      item: {
+        "@type": "Service",
+        name: "Airbnb Turnover Cleaning",
+        description:
+          "Fast, reliable turnover cleaning for short-term rental properties. Ensures your Airbnb or vacation rental is guest-ready with thorough cleaning of all rooms.",
+        provider: { "@type": "HouseCleaningService", name: "Golding Signature Cleaning", url: "https://www.thegoldingagency.com" },
+        areaServed: { "@type": "Place", name: "Palm Beach County, FL" },
+        serviceType: "Airbnb Turnover Cleaning",
+      },
+    },
+    {
+      "@type": "ListItem",
+      position: 5,
+      item: {
+        "@type": "Service",
+        name: "Custom Focus Cleaning",
+        description:
+          "Hourly cleaning service customized to your budget and priority areas. You choose the rooms and tasks that matter most, and we clean thoroughly within the agreed time frame.",
+        provider: { "@type": "HouseCleaningService", name: "Golding Signature Cleaning", url: "https://www.thegoldingagency.com" },
+        areaServed: { "@type": "Place", name: "Palm Beach County, FL" },
+        serviceType: "Custom Cleaning",
+      },
+    },
+  ],
+};
+
 export default function ServicesPage() {
   return (
     <>
+      <BreadcrumbSchema items={[{ name: "Home", href: "/" }, { name: "Services", href: "/services" }]} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(servicesJsonLd) }}
+      />
+
       {/* Hero */}
       <section className="relative flex items-center justify-center overflow-hidden bg-navy pb-20 pt-32 sm:pt-36">
         <div className="absolute inset-0 opacity-20">

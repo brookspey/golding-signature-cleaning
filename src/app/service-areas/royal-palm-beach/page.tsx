@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 
 export const metadata: Metadata = {
   title: "House Cleaning Services in Royal Palm Beach, FL",
@@ -48,6 +49,7 @@ const services = [
 export default function RoyalPalmBeachPage() {
   return (
     <>
+      <BreadcrumbSchema items={[{ name: "Home", href: "/" }, { name: "Service Areas", href: "/service-areas" }, { name: "Royal Palm Beach, FL", href: "/service-areas/royal-palm-beach" }]} />
       {/* Hero */}
       <section className="bg-navy pb-16 pt-32 sm:pt-36">
         <div className="mx-auto max-w-4xl px-4 text-center">

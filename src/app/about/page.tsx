@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 
 export const metadata: Metadata = {
   title: "About Us | Trusted House Cleaners in West Palm Beach, FL",
@@ -12,6 +13,8 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <>
+      <BreadcrumbSchema items={[{ name: "Home", href: "/" }, { name: "About", href: "/about" }]} />
+
       {/* Hero */}
       <section className="bg-navy pb-20 pt-32 sm:pt-36">
         <div className="mx-auto max-w-4xl px-4 text-center">

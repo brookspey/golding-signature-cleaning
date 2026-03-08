@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import GoogleReviews from "@/components/GoogleReviews";
+import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 
 const services = [
   {
@@ -69,9 +70,71 @@ const serviceAreasList = [
   { name: "Greenacres", slug: "greenacres" },
 ];
 
+const faqs = [
+  {
+    question: "How much does house cleaning cost in Palm Beach County?",
+    answer:
+      "Pricing depends on the size of your home, the type of cleaning, and how often you'd like service. Contact us for a free, no-obligation estimate tailored to your needs.",
+  },
+  {
+    question: "What's included in a standard cleaning?",
+    answer:
+      "Our standard cleaning covers dusting surfaces, sweeping and mopping floors, kitchen wipe-down (counters, sink, exterior appliances), bathroom surface cleaning, and trash removal. It's ideal for weekly, bi-weekly, or monthly maintenance.",
+  },
+  {
+    question: "How is deep cleaning different from standard cleaning?",
+    answer:
+      "Deep cleaning includes everything in a standard clean plus detailed bathroom scrubbing, baseboard and buildup removal, and a more thorough kitchen clean. We recommend a deep clean before starting any recurring service.",
+  },
+  {
+    question: "Do you provide cleaning supplies and equipment?",
+    answer:
+      "Yes, we bring all necessary cleaning supplies and equipment. If you have preferred products or specific requirements, we're happy to accommodate.",
+  },
+  {
+    question: "Are you insured and bonded?",
+    answer:
+      "Yes, Golding Signature Cleaning is fully insured for your peace of mind. Our team is trusted, vetted, and committed to treating your home with care.",
+  },
+  {
+    question: "What areas do you serve?",
+    answer:
+      "We serve all of Palm Beach County, Florida, including West Palm Beach, Boca Raton, Delray Beach, Boynton Beach, Jupiter, Wellington, Palm Beach Gardens, Lake Worth, Royal Palm Beach, Lantana, and Greenacres.",
+  },
+  {
+    question: "How do I book a cleaning?",
+    answer:
+      "Simply fill out our online contact form or call us at (646) 764-6839. We usually respond within 24 hours with a free estimate.",
+  },
+  {
+    question: "Can I customize my cleaning service?",
+    answer:
+      "Absolutely. Our Custom Focus Cleaning lets you choose the areas that matter most and set your budget. We clean thoroughly within your agreed time frame and priorities.",
+  },
+];
+
 export default function Home() {
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.answer,
+      },
+    })),
+  };
+
   return (
     <>
+      <BreadcrumbSchema items={[{ name: "Home", href: "/" }]} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
+
       {/* Hero Section */}
       <section className="relative flex min-h-[90vh] items-center justify-center overflow-hidden pt-20">
         <Image
@@ -306,6 +369,44 @@ export default function Home() {
           >
             View All Service Areas
           </Link>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="bg-gray-50 py-20">
+        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+          <div className="mb-10 text-center">
+            <h2 className="mb-3 font-serif text-3xl font-bold text-navy sm:text-4xl">
+              Frequently Asked Questions
+            </h2>
+            <p className="text-gray-600">
+              Common questions about our cleaning services in Palm Beach County.
+            </p>
+          </div>
+          <div className="space-y-4">
+            {faqs.map((faq) => (
+              <details
+                key={faq.question}
+                className="group rounded-2xl border border-gray-200 bg-white shadow-sm transition-shadow hover:shadow-md"
+              >
+                <summary className="flex cursor-pointer items-center justify-between gap-4 px-6 py-5 text-sm font-semibold text-navy [&::-webkit-details-marker]:hidden">
+                  {faq.question}
+                  <svg
+                    className="h-5 w-5 flex-shrink-0 text-gold transition-transform group-open:rotate-180"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    strokeWidth={2}
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+                  </svg>
+                </summary>
+                <div className="border-t border-gray-100 px-6 pb-5 pt-4 text-sm leading-relaxed text-gray-600">
+                  {faq.answer}
+                </div>
+              </details>
+            ))}
+          </div>
         </div>
       </section>
 

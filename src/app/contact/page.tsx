@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import ContactForm from "@/components/ContactForm";
+import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 
 export const metadata: Metadata = {
   title: "Get a Free Cleaning Estimate | Palm Beach County, FL",
@@ -12,6 +13,8 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <>
+      <BreadcrumbSchema items={[{ name: "Home", href: "/" }, { name: "Contact", href: "/contact" }]} />
+
       {/* Hero */}
       <section className="bg-navy pb-16 pt-32 sm:pt-36">
         <div className="mx-auto max-w-4xl px-4 text-center">

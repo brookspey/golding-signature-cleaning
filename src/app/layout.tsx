@@ -114,6 +114,13 @@ const jsonLd = {
   ],
   description:
     "Professional residential cleaning services serving Palm Beach County, Florida.",
+  aggregateRating: {
+    "@type": "AggregateRating",
+    ratingValue: "5.0",
+    reviewCount: "3",
+    bestRating: "5",
+    worstRating: "1",
+  },
   sameAs: [
     "https://www.facebook.com/profile.php?id=61574109267945",
     "https://www.instagram.com/goldingsignaturecleaning/",
