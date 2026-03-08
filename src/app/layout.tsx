@@ -116,7 +116,7 @@ const jsonLd = {
     "Professional residential cleaning services serving Palm Beach County, Florida.",
   sameAs: [
     "https://www.facebook.com/profile.php?id=61574109267945",
-    "https://www.instagram.com/thegoldingcleaners/",
+    "https://www.instagram.com/goldingsignaturecleaning/",
   ],
 };
 

@@ -252,7 +252,7 @@ export default function Home() {
             <p className="text-gray-600">
               Follow us on{" "}
               <a
-                href="https://www.instagram.com/thegoldingcleaners/"
+                href="https://www.instagram.com/goldingsignaturecleaning/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="font-semibold text-gold underline hover:text-gold-light"
