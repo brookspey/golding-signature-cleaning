@@ -125,9 +125,12 @@ export default function WellingtonPage() {
       {/* Neighborhoods */}
       <section className="py-20">
         <div className="mx-auto max-w-4xl px-4 text-center">
-          <h2 className="mb-8 font-serif text-3xl font-bold text-navy">
-            Neighborhoods We Serve in Wellington
+          <h2 className="mb-3 font-serif text-3xl font-bold text-navy">
+            Popular Neighborhoods We Clean in Wellington
           </h2>
+          <p className="mb-8 text-sm text-gray-500">
+            We serve all neighborhoods throughout Wellington — here are just a few.
+          </p>
           <div className="flex flex-wrap justify-center gap-3">
             {neighborhoods.map((n) => (
               <span
