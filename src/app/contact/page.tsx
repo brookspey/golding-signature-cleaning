@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import ContactForm from "@/components/ContactForm";
 
 export const metadata: Metadata = {
   title: "Get a Free Cleaning Estimate | Palm Beach County, FL",
@@ -30,124 +31,7 @@ export default function ContactPage() {
         <div className="mx-auto grid max-w-7xl gap-12 px-4 sm:px-6 md:grid-cols-3 lg:px-8">
           {/* Form */}
           <div className="md:col-span-2">
-            <div className="rounded-2xl bg-white p-6 shadow-sm ring-1 ring-gray-100 sm:p-8">
-              <h2 className="mb-2 text-xl font-bold text-navy">Request a Free Estimate</h2>
-              <p className="mb-6 text-sm text-gray-500">
-                Not sure which service you need? Select &ldquo;Not Sure Yet&rdquo; and we&apos;ll help you choose the best option.
-              </p>
-
-              <form className="space-y-5">
-                {/* Name Row */}
-                <div className="grid gap-4 sm:grid-cols-2">
-                  <div>
-                    <label htmlFor="firstName" className="mb-1 block text-sm font-medium text-gray-700">First Name *</label>
-                    <input type="text" id="firstName" name="firstName" required className="w-full rounded-lg border border-gray-300 px-4 py-2.5 text-sm focus:border-gold focus:outline-none focus:ring-1 focus:ring-gold" />
-                  </div>
-                  <div>
-                    <label htmlFor="lastName" className="mb-1 block text-sm font-medium text-gray-700">Last Name *</label>
-                    <input type="text" id="lastName" name="lastName" required className="w-full rounded-lg border border-gray-300 px-4 py-2.5 text-sm focus:border-gold focus:outline-none focus:ring-1 focus:ring-gold" />
-                  </div>
-                </div>
-
-                {/* Email + Phone */}
-                <div className="grid gap-4 sm:grid-cols-2">
-                  <div>
-                    <label htmlFor="email" className="mb-1 block text-sm font-medium text-gray-700">Email *</label>
-                    <input type="email" id="email" name="email" required className="w-full rounded-lg border border-gray-300 px-4 py-2.5 text-sm focus:border-gold focus:outline-none focus:ring-1 focus:ring-gold" />
-                  </div>
-                  <div>
-                    <label htmlFor="phone" className="mb-1 block text-sm font-medium text-gray-700">Phone *</label>
-                    <input type="tel" id="phone" name="phone" required className="w-full rounded-lg border border-gray-300 px-4 py-2.5 text-sm focus:border-gold focus:outline-none focus:ring-1 focus:ring-gold" />
-                  </div>
-                </div>
-
-                {/* Address */}
-                <div>
-                  <label htmlFor="address" className="mb-1 block text-sm font-medium text-gray-700">Address</label>
-                  <input type="text" id="address" name="address" placeholder="Street address in Palm Beach County" className="w-full rounded-lg border border-gray-300 px-4 py-2.5 text-sm focus:border-gold focus:outline-none focus:ring-1 focus:ring-gold" />
-                </div>
-
-                {/* Service Type + Property Type */}
-                <div className="grid gap-4 sm:grid-cols-2">
-                  <div>
-                    <label htmlFor="serviceType" className="mb-1 block text-sm font-medium text-gray-700">Type of Cleaning Service</label>
-                    <select id="serviceType" name="serviceType" className="w-full rounded-lg border border-gray-300 px-4 py-2.5 text-sm focus:border-gold focus:outline-none focus:ring-1 focus:ring-gold">
-                      <option value="">Select a service</option>
-                      <option value="standard">Standard/Regular Cleaning</option>
-                      <option value="deep">Deep Cleaning</option>
-                      <option value="airbnb">Airbnb & Move-In/Move-Out</option>
-                      <option value="custom">Custom Focus Cleaning (Hourly)</option>
-                      <option value="not-sure">Not Sure Yet</option>
-                    </select>
-                  </div>
-                  <div>
-                    <label htmlFor="propertyType" className="mb-1 block text-sm font-medium text-gray-700">Property Type</label>
-                    <select id="propertyType" name="propertyType" className="w-full rounded-lg border border-gray-300 px-4 py-2.5 text-sm focus:border-gold focus:outline-none focus:ring-1 focus:ring-gold">
-                      <option value="">Select type</option>
-                      <option value="apartment">Apartment</option>
-                      <option value="house">House</option>
-                      <option value="condo">Condo</option>
-                      <option value="office">Office</option>
-                    </select>
-                  </div>
-                </div>
-
-                {/* Bedrooms + Bathrooms */}
-                <div className="grid gap-4 sm:grid-cols-2">
-                  <div>
-                    <label htmlFor="bedrooms" className="mb-1 block text-sm font-medium text-gray-700">Number of Bedrooms</label>
-                    <select id="bedrooms" name="bedrooms" className="w-full rounded-lg border border-gray-300 px-4 py-2.5 text-sm focus:border-gold focus:outline-none focus:ring-1 focus:ring-gold">
-                      <option value="">Select</option>
-                      <option value="1">1</option>
-                      <option value="2">2</option>
-                      <option value="3">3</option>
-                      <option value="4">4</option>
-                      <option value="5+">5+</option>
-                    </select>
-                  </div>
-                  <div>
-                    <label htmlFor="bathrooms" className="mb-1 block text-sm font-medium text-gray-700">Number of Bathrooms</label>
-                    <select id="bathrooms" name="bathrooms" className="w-full rounded-lg border border-gray-300 px-4 py-2.5 text-sm focus:border-gold focus:outline-none focus:ring-1 focus:ring-gold">
-                      <option value="">Select</option>
-                      <option value="1">1</option>
-                      <option value="2">2</option>
-                      <option value="3">3</option>
-                      <option value="4+">4+</option>
-                    </select>
-                  </div>
-                </div>
-
-                {/* Preferred Date + Time */}
-                <div className="grid gap-4 sm:grid-cols-2">
-                  <div>
-                    <label htmlFor="preferredDate" className="mb-1 block text-sm font-medium text-gray-700">Preferred Service Date</label>
-                    <input type="date" id="preferredDate" name="preferredDate" className="w-full rounded-lg border border-gray-300 px-4 py-2.5 text-sm focus:border-gold focus:outline-none focus:ring-1 focus:ring-gold" />
-                  </div>
-                  <div>
-                    <label htmlFor="timeWindow" className="mb-1 block text-sm font-medium text-gray-700">Preferred Time Window</label>
-                    <select id="timeWindow" name="timeWindow" className="w-full rounded-lg border border-gray-300 px-4 py-2.5 text-sm focus:border-gold focus:outline-none focus:ring-1 focus:ring-gold">
-                      <option value="">Select</option>
-                      <option value="morning">Morning (6 AM – 12 PM)</option>
-                      <option value="afternoon">Afternoon (12 PM – 5 PM)</option>
-                      <option value="evening">Evening (5 PM – 10 PM)</option>
-                    </select>
-                  </div>
-                </div>
-
-                {/* Notes */}
-                <div>
-                  <label htmlFor="notes" className="mb-1 block text-sm font-medium text-gray-700">Additional Notes</label>
-                  <textarea id="notes" name="notes" rows={4} placeholder="Tell us about any specific areas, concerns, or special instructions..." className="w-full rounded-lg border border-gray-300 px-4 py-2.5 text-sm focus:border-gold focus:outline-none focus:ring-1 focus:ring-gold" />
-                </div>
-
-                <button
-                  type="submit"
-                  className="w-full rounded-full bg-gold py-3.5 text-base font-semibold text-navy transition-all hover:bg-gold-light hover:shadow-lg sm:w-auto sm:px-10"
-                >
-                  Submit Request
-                </button>
-              </form>
-            </div>
+            <ContactForm />
           </div>
 
           {/* Sidebar */}
