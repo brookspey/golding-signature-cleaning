@@ -41,7 +41,7 @@ const packages = [
       "Kitchen deep clean (exterior appliances, heavier grime)",
     ],
     note: "Deep cleaning is recommended before starting recurring service.",
-    popular: true,
+    popular: false,
   },
   {
     name: "Airbnb & Move-In/Move-Out Cleaning",
