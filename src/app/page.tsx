@@ -118,7 +118,7 @@ const faqs = [
   {
     question: "How do I book a cleaning?",
     answer:
-      "Simply fill out our online contact form or call us at (646) 764-6839. We usually respond within 24 hours with a free estimate.",
+      "Simply fill out our online contact form or call us at (561) 246-6544. We usually respond within 24 hours with a free estimate.",
   },
   {
     question: "Can I customize my cleaning service?",
@@ -182,10 +182,10 @@ export default function Home() {
             </Link>
           </div>
           <a
-            href="tel:16467646839"
+            href="tel:15612466544"
             className="mt-6 inline-block text-sm text-white/70 transition-colors hover:text-gold"
           >
-            Or call us: +1 (646) 764-6839
+            Or call us: +1 (561) 246-6544
           </a>
         </div>
       </section>
@@ -442,10 +442,10 @@ export default function Home() {
               Get Your Free Estimate
             </Link>
             <a
-              href="tel:16467646839"
+              href="tel:15612466544"
               className="rounded-full border-2 border-navy px-8 py-3.5 text-base font-semibold text-navy transition-colors hover:bg-navy hover:text-white"
             >
-              Call +1 (646) 764-6839
+              Call +1 (561) 246-6544
             </a>
           </div>
         </div>

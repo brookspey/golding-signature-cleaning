@@ -41,10 +41,10 @@ export default function Header() {
         {/* Desktop CTA + Social */}
         <div className="hidden items-center gap-4 md:flex">
           <a
-            href="tel:16467646839"
+            href="tel:15612466544"
             className="text-sm font-medium text-white/90 transition-colors hover:text-gold"
           >
-            (646) 764-6839
+            (561) 246-6544
           </a>
           <a
             href="https://www.facebook.com/profile.php?id=61574109267945"
@@ -93,11 +93,11 @@ export default function Header() {
             <Link href="/service-areas" onClick={() => setMobileOpen(false)} className="text-base font-medium text-white/90 hover:text-gold">Service Areas</Link>
             <Link href="/contact" onClick={() => setMobileOpen(false)} className="text-base font-medium text-white/90 hover:text-gold">Contact</Link>
             <a
-              href="tel:16467646839"
+              href="tel:15612466544"
               onClick={() => setMobileOpen(false)}
               className="mt-2 text-base font-medium text-white/90 hover:text-gold"
             >
-              (646) 764-6839
+              (561) 246-6544
             </a>
             <Link
               href="/contact"

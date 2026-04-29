@@ -76,7 +76,7 @@ const jsonLd = {
   "@type": "HouseCleaningService",
   name: "Golding Signature Cleaning",
   url: "https://www.thegoldingagency.com",
-  telephone: "+16467646839",
+  telephone: "+15612466544",
   email: "info@thegoldingagency.com",
   image: "https://www.thegoldingagency.com/images/logo.png",
   address: {

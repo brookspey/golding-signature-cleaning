@@ -86,8 +86,8 @@ export default function Footer() {
               Contact
             </h3>
             <div className="flex flex-col gap-3 text-sm text-white/70">
-              <a href="tel:16467646839" className="transition-colors hover:text-gold">
-                +1 (646) 764-6839
+              <a href="tel:15612466544" className="transition-colors hover:text-gold">
+                +1 (561) 246-6544
               </a>
               <a href="mailto:info@thegoldingagency.com" className="transition-colors hover:text-gold">
                 info@thegoldingagency.com

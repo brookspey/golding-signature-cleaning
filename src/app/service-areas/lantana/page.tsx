@@ -211,10 +211,10 @@ export default function LantanaPage() {
               Get a Free Estimate
             </Link>
             <a
-              href="tel:16467646839"
+              href="tel:15612466544"
               className="rounded-full border-2 border-white px-8 py-3.5 text-base font-semibold text-white transition-colors hover:bg-white hover:text-navy"
             >
-              Call +1 (646) 764-6839
+              Call +1 (561) 246-6544
             </a>
           </div>
         </div>
