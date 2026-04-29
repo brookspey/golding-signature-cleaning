@@ -23,23 +23,33 @@ const neighborhoods = [
 const services = [
   {
     name: "Standard Cleaning",
+    slug: "standard-cleaning",
     description:
       "Routine upkeep for your Jupiter home — kitchens, bathrooms, floors, and living spaces cleaned to a consistent standard every visit.",
   },
   {
     name: "Deep Cleaning",
+    slug: "deep-cleaning",
     description:
       "A thorough, top-to-bottom clean that tackles built-up grime, baseboards, ceiling fans, inside appliances, and hard-to-reach areas.",
   },
   {
     name: "Move-In / Move-Out Cleaning",
+    slug: "airbnb-cleaning",
     description:
       "Comprehensive cleaning for homes in transition. We leave every surface spotless so you can start fresh or get your deposit back.",
   },
   {
     name: "Custom Focus Cleaning",
+    slug: "custom-cleaning",
     description:
       "Tell us your priorities and we build the session around them — perfect for specific rooms, post-renovation dust, or seasonal refreshes.",
+  },
+  {
+    name: "Office Cleaning",
+    slug: "office-cleaning",
+    description:
+      "Dependable office cleaning for Jupiter businesses in Abacoa Town Center and along Indiantown Road. We keep your professional space pristine so your team can stay productive.",
   },
 ];
 
@@ -110,15 +120,19 @@ export default function JupiterPage() {
           </h2>
           <div className="grid gap-8 md:grid-cols-2">
             {services.map((service) => (
-              <div
+              <Link
                 key={service.name}
-                className="rounded-2xl border border-gray-100 bg-white p-6 shadow-sm"
+                href={`/service-areas/jupiter/${service.slug}`}
+                className="rounded-2xl border border-gray-100 bg-white p-6 shadow-sm transition-shadow hover:shadow-md"
               >
                 <h3 className="mb-2 text-lg font-bold text-navy">{service.name}</h3>
                 <p className="text-sm leading-relaxed text-gray-600">
                   {service.description}
                 </p>
-              </div>
+                <span className="mt-3 inline-block text-sm font-semibold text-gold">
+                  Learn more &rarr;
+                </span>
+              </Link>
             ))}
           </div>
         </div>

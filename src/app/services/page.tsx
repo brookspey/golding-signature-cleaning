@@ -60,6 +60,23 @@ const packages = [
     note: null,
     popular: false,
   },
+  {
+    name: "Office Cleaning",
+    image: "/images/standard-cleaning.png",
+    alt: "Professional office cleaning service in Palm Beach County FL",
+    price: "Starting estimate provided after consultation",
+    description:
+      "Keep your workspace clean, healthy, and professional. We provide reliable office cleaning for small and mid-size businesses throughout Palm Beach County.",
+    includes: [
+      "Desk and workstation sanitization",
+      "Breakroom and kitchen cleaning",
+      "Reception area and lobby care",
+      "Restroom deep cleaning and restocking",
+      "Trash and recycling removal",
+    ],
+    note: "Available for daily, weekly, or biweekly scheduling.",
+    popular: false,
+  },
 ];
 
 const servicesJsonLd = {
@@ -131,8 +148,43 @@ const servicesJsonLd = {
         serviceType: "Custom Cleaning",
       },
     },
+    {
+      "@type": "ListItem",
+      position: 6,
+      item: {
+        "@type": "Service",
+        name: "Office Cleaning",
+        description:
+          "Professional office and workspace cleaning for small and mid-size businesses. Includes desk sanitization, breakroom cleaning, restroom care, and trash removal.",
+        provider: { "@type": "HouseCleaningService", name: "Golding Signature Cleaning", url: "https://www.thegoldingagency.com" },
+        areaServed: { "@type": "Place", name: "Palm Beach County, FL" },
+        serviceType: "Commercial Office Cleaning",
+      },
+    },
   ],
 };
+
+const serviceLocationLinks = [
+  { service: "Standard Cleaning", slug: "standard-cleaning" },
+  { service: "Deep Cleaning", slug: "deep-cleaning" },
+  { service: "Airbnb & Move-Out Cleaning", slug: "airbnb-cleaning" },
+  { service: "Office Cleaning", slug: "office-cleaning" },
+  { service: "Custom Focus Cleaning", slug: "custom-cleaning" },
+];
+
+const cities = [
+  { name: "West Palm Beach", slug: "west-palm-beach" },
+  { name: "Boca Raton", slug: "boca-raton" },
+  { name: "Delray Beach", slug: "delray-beach" },
+  { name: "Boynton Beach", slug: "boynton-beach" },
+  { name: "Jupiter", slug: "jupiter" },
+  { name: "Wellington", slug: "wellington" },
+  { name: "Palm Beach Gardens", slug: "palm-beach-gardens" },
+  { name: "Lake Worth Beach", slug: "lake-worth" },
+  { name: "Royal Palm Beach", slug: "royal-palm-beach" },
+  { name: "Lantana", slug: "lantana" },
+  { name: "Greenacres", slug: "greenacres" },
+];
 
 export default function ServicesPage() {
   return (
@@ -172,7 +224,7 @@ export default function ServicesPage() {
       {/* Service Packages */}
       <section className="py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid gap-10 lg:grid-cols-3">
+          <div className="grid gap-10 md:grid-cols-2 xl:grid-cols-4">
             {packages.map((pkg) => (
               <article
                 key={pkg.name}
@@ -266,6 +318,33 @@ export default function ServicesPage() {
             >
               Request a Custom Cleaning
             </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Find Near You */}
+      <section className="py-20">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <h2 className="mb-10 text-center font-serif text-3xl font-bold text-navy">
+            Find Our Services Near You
+          </h2>
+          <div className="space-y-8">
+            {serviceLocationLinks.map((svc) => (
+              <div key={svc.slug}>
+                <h3 className="mb-3 text-lg font-bold text-navy">{svc.service}</h3>
+                <div className="flex flex-wrap gap-2">
+                  {cities.map((city) => (
+                    <Link
+                      key={city.slug}
+                      href={`/service-areas/${city.slug}/${svc.slug}`}
+                      className="rounded-full border border-navy/20 bg-navy/5 px-4 py-2 text-sm font-medium text-navy transition-colors hover:bg-navy hover:text-white"
+                    >
+                      {city.name}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>

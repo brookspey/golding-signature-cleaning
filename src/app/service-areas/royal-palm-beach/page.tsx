@@ -26,23 +26,33 @@ const neighborhoods = [
 const services = [
   {
     name: "Standard Cleaning",
+    slug: "standard-cleaning",
     description:
       "Recurring maintenance cleaning designed for busy Royal Palm Beach families. We handle every room so you can spend your weekends at Commons Park instead of scrubbing floors. Consistent results every visit, with the same trusted cleaner each time.",
   },
   {
     name: "Deep Cleaning",
+    slug: "deep-cleaning",
     description:
       "A comprehensive clean that covers everything from ceiling fan blades to baseboards. Ideal for larger Royal Palm Beach homes with extra square footage in communities like Madison Green and Hampton Cay where dust and allergens accumulate quickly.",
   },
   {
     name: "Airbnb / Move-Out Cleaning",
+    slug: "airbnb-cleaning",
     description:
       "Thorough turnover cleaning for rental properties and homeowners preparing to move. We leave every surface inspection-ready, from freshly scrubbed bathrooms to spotless kitchen appliances, so you can hand over the keys with confidence.",
   },
   {
     name: "Custom Focus Cleaning",
+    slug: "custom-cleaning",
     description:
       "You set the priorities and the budget. Whether it's deep-scrubbing the playroom after a week of kid activities or detailing the master suite before company arrives, we focus our time where it matters most to your household.",
+  },
+  {
+    name: "Office Cleaning",
+    slug: "office-cleaning",
+    description:
+      "Reliable cleaning for offices and professional spaces along Royal Palm Beach Boulevard and Southern Boulevard. We serve local businesses, medical practices, and small offices throughout the Royal Palm Beach community.",
   },
 ];
 
@@ -123,9 +133,10 @@ export default function RoyalPalmBeachPage() {
           </h2>
           <div className="grid gap-6 md:grid-cols-2">
             {services.map((service) => (
-              <div
+              <Link
                 key={service.name}
-                className="rounded-2xl border border-gray-100 bg-white p-6 shadow-sm"
+                href={`/service-areas/royal-palm-beach/${service.slug}`}
+                className="rounded-2xl border border-gray-100 bg-white p-6 shadow-sm transition-shadow hover:shadow-md"
               >
                 <h3 className="mb-2 text-lg font-bold text-navy">
                   {service.name}
@@ -133,7 +144,10 @@ export default function RoyalPalmBeachPage() {
                 <p className="text-sm leading-relaxed text-gray-600">
                   {service.description}
                 </p>
-              </div>
+                <span className="mt-3 inline-block text-sm font-semibold text-gold">
+                  Learn more &rarr;
+                </span>
+              </Link>
             ))}
           </div>
         </div>

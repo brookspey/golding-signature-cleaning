@@ -25,23 +25,33 @@ const neighborhoods = [
 const services = [
   {
     name: "Standard Cleaning",
+    slug: "standard-cleaning",
     description:
       "Dependable recurring cleaning that covers kitchens, bathrooms, floors, and living areas — keeping your home fresh on a schedule that fits your budget.",
   },
   {
     name: "Deep Cleaning",
+    slug: "deep-cleaning",
     description:
       "A detailed session that goes beyond the surface — scrubbing grout, cleaning inside cabinets, degreasing range hoods, and addressing every overlooked area.",
   },
   {
     name: "Move-In / Move-Out Cleaning",
+    slug: "airbnb-cleaning",
     description:
       "Full-property cleaning for tenants, landlords, and homeowners in transition. Ideal for rental turnovers and getting security deposits back.",
   },
   {
     name: "Custom Focus Cleaning",
+    slug: "custom-cleaning",
     description:
       "Choose where we spend our time. Great for short-term rental turnovers, post-party cleanups, or concentrating on the areas that matter most to you.",
+  },
+  {
+    name: "Office Cleaning",
+    slug: "office-cleaning",
+    description:
+      "Affordable office cleaning for Lake Worth Beach businesses along Lake Avenue and the Dixie Highway commercial corridor. We keep small offices and storefronts looking their best without stretching your budget.",
   },
 ];
 
@@ -113,15 +123,19 @@ export default function LakeWorthPage() {
           </h2>
           <div className="grid gap-8 md:grid-cols-2">
             {services.map((service) => (
-              <div
+              <Link
                 key={service.name}
-                className="rounded-2xl border border-gray-100 bg-white p-6 shadow-sm"
+                href={`/service-areas/lake-worth/${service.slug}`}
+                className="rounded-2xl border border-gray-100 bg-white p-6 shadow-sm transition-shadow hover:shadow-md"
               >
                 <h3 className="mb-2 text-lg font-bold text-navy">{service.name}</h3>
                 <p className="text-sm leading-relaxed text-gray-600">
                   {service.description}
                 </p>
-              </div>
+                <span className="mt-3 inline-block text-sm font-semibold text-gold">
+                  Learn more &rarr;
+                </span>
+              </Link>
             ))}
           </div>
         </div>

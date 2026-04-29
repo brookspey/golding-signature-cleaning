@@ -26,23 +26,33 @@ const neighborhoods = [
 const services = [
   {
     name: "Standard Cleaning",
+    slug: "standard-cleaning",
     description:
       "A comprehensive clean of every room — kitchens, bathrooms, bedrooms, and common areas maintained to a premium standard each visit.",
   },
   {
     name: "Deep Cleaning",
+    slug: "deep-cleaning",
     description:
       "Meticulous attention to every corner of your home, including inside ovens, behind refrigerators, window tracks, grout lines, and light fixtures.",
   },
   {
     name: "Move-In / Move-Out Cleaning",
+    slug: "airbnb-cleaning",
     description:
       "A full property cleaning designed for homes changing hands. We ensure every surface, cabinet interior, and appliance is move-in ready.",
   },
   {
     name: "Custom Focus Cleaning",
+    slug: "custom-cleaning",
     description:
       "Designed for homeowners who want to direct the session — ideal for pre-event preparation, guest suite refreshes, or targeting high-traffic zones.",
+  },
+  {
+    name: "Office Cleaning",
+    slug: "office-cleaning",
+    description:
+      "Professional office cleaning for businesses along PGA Boulevard and in the Gardens corporate parks. From medical offices near Midtown to professional suites at Downtown at the Gardens, we deliver spotless results.",
   },
 ];
 
@@ -114,15 +124,19 @@ export default function PalmBeachGardensPage() {
           </h2>
           <div className="grid gap-8 md:grid-cols-2">
             {services.map((service) => (
-              <div
+              <Link
                 key={service.name}
-                className="rounded-2xl border border-gray-100 bg-white p-6 shadow-sm"
+                href={`/service-areas/palm-beach-gardens/${service.slug}`}
+                className="rounded-2xl border border-gray-100 bg-white p-6 shadow-sm transition-shadow hover:shadow-md"
               >
                 <h3 className="mb-2 text-lg font-bold text-navy">{service.name}</h3>
                 <p className="text-sm leading-relaxed text-gray-600">
                   {service.description}
                 </p>
-              </div>
+                <span className="mt-3 inline-block text-sm font-semibold text-gold">
+                  Learn more &rarr;
+                </span>
+              </Link>
             ))}
           </div>
         </div>

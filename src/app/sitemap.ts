@@ -14,6 +14,14 @@ const cities = [
   "greenacres",
 ];
 
+const services = [
+  "standard-cleaning",
+  "deep-cleaning",
+  "airbnb-cleaning",
+  "office-cleaning",
+  "custom-cleaning",
+];
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://www.thegoldingagency.com";
 
@@ -23,6 +31,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
     changeFrequency: "monthly",
     priority: 0.8,
   }));
+
+  const serviceLocationPages: MetadataRoute.Sitemap = cities.flatMap((city) =>
+    services.map((service) => ({
+      url: `${baseUrl}/service-areas/${city}/${service}`,
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    }))
+  );
 
   return [
     {
@@ -56,5 +73,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     ...cityPages,
+    ...serviceLocationPages,
   ];
 }

@@ -25,23 +25,33 @@ const neighborhoods = [
 const services = [
   {
     name: "Standard Cleaning",
+    slug: "standard-cleaning",
     description:
       "Regular upkeep cleaning built for Lantana's coastal lifestyle. We tackle salt residue on windows, sand in entryways, and humidity-driven buildup on bathroom surfaces so your home stays fresh between the beach and the Intracoastal.",
   },
   {
     name: "Deep Cleaning",
+    slug: "deep-cleaning",
     description:
       "A meticulous top-to-bottom clean for waterfront condos and single-family homes alike. We address mildew in bathrooms, grout discoloration, interior window tracks, and all the spots that routine cleaning misses in Lantana's humid climate.",
   },
   {
     name: "Airbnb / Short-Term Rental Cleaning",
+    slug: "airbnb-cleaning",
     description:
       "Fast, reliable turnovers for Lantana's growing vacation rental market. We restock essentials, launder linens on request, and ensure every surface meets guest-ready standards — even on tight same-day schedules between bookings.",
   },
   {
     name: "Custom Focus Cleaning",
+    slug: "custom-cleaning",
     description:
       "Choose what gets cleaned and set your own budget. Perfect for Lantana homeowners who want extra attention on specific areas — a boat-tracked mudroom, a kitchen after hosting, or a guest room before snowbird season begins.",
+  },
+  {
+    name: "Office Cleaning",
+    slug: "office-cleaning",
+    description:
+      "Professional cleaning for small offices and commercial spaces in Lantana's business district along Lantana Road and Hypoluxo Road. We keep your workspace clean and inviting for both employees and clients.",
   },
 ];
 
@@ -123,9 +133,10 @@ export default function LantanaPage() {
           </h2>
           <div className="grid gap-6 md:grid-cols-2">
             {services.map((service) => (
-              <div
+              <Link
                 key={service.name}
-                className="rounded-2xl border border-gray-100 bg-white p-6 shadow-sm"
+                href={`/service-areas/lantana/${service.slug}`}
+                className="rounded-2xl border border-gray-100 bg-white p-6 shadow-sm transition-shadow hover:shadow-md"
               >
                 <h3 className="mb-2 text-lg font-bold text-navy">
                   {service.name}
@@ -133,7 +144,10 @@ export default function LantanaPage() {
                 <p className="text-sm leading-relaxed text-gray-600">
                   {service.description}
                 </p>
-              </div>
+                <span className="mt-3 inline-block text-sm font-semibold text-gold">
+                  Learn more &rarr;
+                </span>
+              </Link>
             ))}
           </div>
         </div>

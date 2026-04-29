@@ -23,23 +23,33 @@ const neighborhoods = [
 const services = [
   {
     name: "Standard Cleaning",
+    slug: "standard-cleaning",
     description:
       "Consistent, thorough cleaning of your entire home on a schedule that works for you — weekly, biweekly, or monthly visits.",
   },
   {
     name: "Deep Cleaning",
+    slug: "deep-cleaning",
     description:
       "An intensive session covering baseboards, light fixtures, inside cabinets, behind appliances, and every surface that regular cleaning misses.",
   },
   {
     name: "Move-In / Move-Out Cleaning",
+    slug: "airbnb-cleaning",
     description:
       "A complete reset for your home between residents. Every closet, drawer, and fixture cleaned and ready for the next chapter.",
   },
   {
     name: "Custom Focus Cleaning",
+    slug: "custom-cleaning",
     description:
       "You set the priorities — whether that means extra time on kitchens, tackling playrooms, or preparing guest suites for visitors.",
+  },
+  {
+    name: "Office Cleaning",
+    slug: "office-cleaning",
+    description:
+      "Thorough cleaning for offices and commercial spaces near Wellington Green and along State Road 7. We help Wellington businesses maintain a clean, welcoming environment for staff and visitors.",
   },
 ];
 
@@ -110,15 +120,19 @@ export default function WellingtonPage() {
           </h2>
           <div className="grid gap-8 md:grid-cols-2">
             {services.map((service) => (
-              <div
+              <Link
                 key={service.name}
-                className="rounded-2xl border border-gray-100 bg-white p-6 shadow-sm"
+                href={`/service-areas/wellington/${service.slug}`}
+                className="rounded-2xl border border-gray-100 bg-white p-6 shadow-sm transition-shadow hover:shadow-md"
               >
                 <h3 className="mb-2 text-lg font-bold text-navy">{service.name}</h3>
                 <p className="text-sm leading-relaxed text-gray-600">
                   {service.description}
                 </p>
-              </div>
+                <span className="mt-3 inline-block text-sm font-semibold text-gold">
+                  Learn more &rarr;
+                </span>
+              </Link>
             ))}
           </div>
         </div>

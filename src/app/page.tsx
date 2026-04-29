@@ -47,6 +47,20 @@ const services = [
     ],
     note: null,
   },
+  {
+    title: "Office Cleaning",
+    image: "/images/standard-cleaning.png",
+    alt: "Professional office cleaning service in Palm Beach County FL",
+    description:
+      "Keep your workspace clean, healthy, and professional. We offer flexible scheduling to minimize disruption to your business operations.",
+    includes: [
+      "Desk & surface sanitization",
+      "Restroom cleaning & restocking",
+      "Floor vacuuming & mopping",
+      "Trash & recycling removal",
+    ],
+    note: "Available for one-time or recurring office cleaning schedules.",
+  },
 ];
 
 const galleryImages = [
@@ -211,7 +225,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid gap-8 md:grid-cols-3">
+          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {services.map((service) => (
               <article
                 key={service.title}

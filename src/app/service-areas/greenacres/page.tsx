@@ -25,23 +25,33 @@ const neighborhoods = [
 const services = [
   {
     name: "Standard Cleaning",
+    slug: "standard-cleaning",
     description:
       "Practical, thorough maintenance cleaning that covers every room in your Greenacres home. We vacuum, mop, dust, and sanitize on a consistent schedule — weekly, biweekly, or monthly — so your home is always guest-ready without the effort.",
   },
   {
     name: "Deep Cleaning",
+    slug: "deep-cleaning",
     description:
       "An intensive clean for homes that need a full reset. We scrub tile grout, degrease range hoods, detail bathroom fixtures, and clean behind appliances. Popular with Greenacres homeowners doing seasonal refreshes or preparing for family visits.",
   },
   {
     name: "Airbnb / Move-Out Cleaning",
+    slug: "airbnb-cleaning",
     description:
       "Complete turnover cleaning for rental units and move-outs across Greenacres. We handle everything from oven interiors to closet shelving, ensuring the space is ready for the next tenant or a successful final walkthrough.",
   },
   {
     name: "Custom Focus Cleaning",
+    slug: "custom-cleaning",
     description:
       "Set your own priorities and budget. Tell us which rooms or tasks matter most — whether that's a kitchen deep-scrub, bathroom detailing, or a full living area refresh — and we'll build a cleaning plan that fits your price point.",
+  },
+  {
+    name: "Office Cleaning",
+    slug: "office-cleaning",
+    description:
+      "Budget-friendly office cleaning for Greenacres businesses along Jog Road and the 10th Avenue North commercial strip. We provide consistent, no-frills workspace cleaning that keeps your office presentable and hygienic.",
   },
 ];
 
@@ -123,9 +133,10 @@ export default function GreenacresPage() {
           </h2>
           <div className="grid gap-6 md:grid-cols-2">
             {services.map((service) => (
-              <div
+              <Link
                 key={service.name}
-                className="rounded-2xl border border-gray-100 bg-white p-6 shadow-sm"
+                href={`/service-areas/greenacres/${service.slug}`}
+                className="rounded-2xl border border-gray-100 bg-white p-6 shadow-sm transition-shadow hover:shadow-md"
               >
                 <h3 className="mb-2 text-lg font-bold text-navy">
                   {service.name}
@@ -133,7 +144,10 @@ export default function GreenacresPage() {
                 <p className="text-sm leading-relaxed text-gray-600">
                   {service.description}
                 </p>
-              </div>
+                <span className="mt-3 inline-block text-sm font-semibold text-gold">
+                  Learn more &rarr;
+                </span>
+              </Link>
             ))}
           </div>
         </div>

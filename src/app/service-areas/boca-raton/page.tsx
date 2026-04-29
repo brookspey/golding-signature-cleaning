@@ -25,23 +25,33 @@ const neighborhoods = [
 const services = [
   {
     name: "Standard Cleaning",
+    slug: "standard-cleaning",
     description:
       "Consistent, reliable upkeep for Boca Raton's larger homes and estates. We handle every room so your property stays guest-ready between deep cleans.",
   },
   {
     name: "Deep Cleaning",
+    slug: "deep-cleaning",
     description:
       "A comprehensive clean that addresses buildup in hard-to-reach areas. Especially important in Boca's tropical climate, where humidity accelerates dust, mildew, and allergen accumulation.",
   },
   {
     name: "Airbnb / Move-Out Cleaning",
+    slug: "airbnb-cleaning",
     description:
       "Detailed turnover cleaning for rental properties and homes changing hands. We leave every surface, appliance, and fixture in move-in condition.",
   },
   {
     name: "Custom Focus Cleaning",
+    slug: "custom-cleaning",
     description:
       "You set the priorities. Whether your master bath needs extra attention or your lanai needs a thorough wipe-down, we customize the service to match.",
+  },
+  {
+    name: "Office Cleaning",
+    slug: "office-cleaning",
+    description:
+      "Commercial cleaning services for professional offices in Boca Raton's business parks and corporate centers. From Arvida Park to the Innovation Campus, we maintain workspaces to a premium standard.",
   },
 ];
 
@@ -114,9 +124,10 @@ export default function BocaRatonPage() {
           </h2>
           <div className="grid gap-6 md:grid-cols-2">
             {services.map((service) => (
-              <div
+              <Link
                 key={service.name}
-                className="rounded-2xl border border-gray-100 bg-white p-6 shadow-sm"
+                href={`/service-areas/boca-raton/${service.slug}`}
+                className="rounded-2xl border border-gray-100 bg-white p-6 shadow-sm transition-shadow hover:shadow-md"
               >
                 <h3 className="mb-2 text-lg font-bold text-navy">
                   {service.name}
@@ -124,7 +135,10 @@ export default function BocaRatonPage() {
                 <p className="text-sm leading-relaxed text-gray-600">
                   {service.description}
                 </p>
-              </div>
+                <span className="mt-3 inline-block text-sm font-semibold text-gold">
+                  Learn more &rarr;
+                </span>
+              </Link>
             ))}
           </div>
         </div>

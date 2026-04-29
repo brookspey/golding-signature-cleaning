@@ -2,17 +2,17 @@ import Image from "next/image";
 import Link from "next/link";
 
 const serviceAreas = [
-  "West Palm Beach",
-  "Boca Raton",
-  "Delray Beach",
-  "Boynton Beach",
-  "Jupiter",
-  "Wellington",
-  "Palm Beach Gardens",
-  "Lake Worth",
-  "Royal Palm Beach",
-  "Lantana",
-  "Greenacres",
+  { name: "West Palm Beach", slug: "west-palm-beach" },
+  { name: "Boca Raton", slug: "boca-raton" },
+  { name: "Delray Beach", slug: "delray-beach" },
+  { name: "Boynton Beach", slug: "boynton-beach" },
+  { name: "Jupiter", slug: "jupiter" },
+  { name: "Wellington", slug: "wellington" },
+  { name: "Palm Beach Gardens", slug: "palm-beach-gardens" },
+  { name: "Lake Worth", slug: "lake-worth" },
+  { name: "Royal Palm Beach", slug: "royal-palm-beach" },
+  { name: "Lantana", slug: "lantana" },
+  { name: "Greenacres", slug: "greenacres" },
 ];
 
 export default function Footer() {
@@ -35,8 +35,8 @@ export default function Footer() {
             <p className="text-sm leading-relaxed text-white/70">
               Professional cleaning company dedicated to providing reliable,
               detail-oriented, and customized cleaning services. Proudly serving
-              residential, Airbnb, and move-in/move-out clients across Palm
-              Beach County, Florida.
+              residential, Airbnb, move-in/move-out, and office cleaning clients
+              across Palm Beach County, Florida.
             </p>
           </div>
 
@@ -68,8 +68,13 @@ export default function Footer() {
             </h3>
             <ul className="grid grid-cols-2 gap-x-4 gap-y-1.5">
               {serviceAreas.map((area) => (
-                <li key={area} className="text-sm text-white/70">
-                  {area}
+                <li key={area.slug}>
+                  <Link
+                    href={`/service-areas/${area.slug}`}
+                    className="text-sm text-white/70 transition-colors hover:text-gold"
+                  >
+                    {area.name}
+                  </Link>
                 </li>
               ))}
             </ul>

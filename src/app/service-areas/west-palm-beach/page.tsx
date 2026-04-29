@@ -25,23 +25,33 @@ const neighborhoods = [
 const services = [
   {
     name: "Standard Cleaning",
+    slug: "standard-cleaning",
     description:
       "Routine maintenance cleaning that keeps your West Palm Beach home looking its best week after week. We dust, vacuum, mop, and sanitize all living spaces so you can focus on enjoying the waterfront lifestyle.",
   },
   {
     name: "Deep Cleaning",
+    slug: "deep-cleaning",
     description:
       "A thorough, top-to-bottom clean that reaches every corner of your home. Ideal for historic Flamingo Park bungalows or modern downtown condos that need a detailed refresh.",
   },
   {
     name: "Airbnb / Move-Out Cleaning",
+    slug: "airbnb-cleaning",
     description:
       "Fast-turnaround cleaning for short-term rental hosts and tenants moving in or out. We ensure every surface is spotless and ready for the next guest or occupant.",
   },
   {
     name: "Custom Focus Cleaning",
+    slug: "custom-cleaning",
     description:
       "Tell us what matters most to you. Whether it's the kitchen after a dinner party or a nursery that needs extra attention, we tailor the clean to your priorities.",
+  },
+  {
+    name: "Office Cleaning",
+    slug: "office-cleaning",
+    description:
+      "Professional cleaning for offices and workspaces in downtown West Palm Beach and the CityPlace area. We keep your business environment spotless so your team can focus on what matters.",
   },
 ];
 
@@ -114,9 +124,10 @@ export default function WestPalmBeachPage() {
           </h2>
           <div className="grid gap-6 md:grid-cols-2">
             {services.map((service) => (
-              <div
+              <Link
                 key={service.name}
-                className="rounded-2xl border border-gray-100 bg-white p-6 shadow-sm"
+                href={`/service-areas/west-palm-beach/${service.slug}`}
+                className="rounded-2xl border border-gray-100 bg-white p-6 shadow-sm transition-shadow hover:shadow-md"
               >
                 <h3 className="mb-2 text-lg font-bold text-navy">
                   {service.name}
@@ -124,7 +135,10 @@ export default function WestPalmBeachPage() {
                 <p className="text-sm leading-relaxed text-gray-600">
                   {service.description}
                 </p>
-              </div>
+                <span className="mt-3 inline-block text-sm font-semibold text-gold">
+                  Learn more &rarr;
+                </span>
+              </Link>
             ))}
           </div>
         </div>

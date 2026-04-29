@@ -41,6 +41,12 @@ export default function Header() {
         {/* Desktop CTA + Social */}
         <div className="hidden items-center gap-4 md:flex">
           <a
+            href="tel:16467646839"
+            className="text-sm font-medium text-white/90 transition-colors hover:text-gold"
+          >
+            (646) 764-6839
+          </a>
+          <a
             href="https://www.facebook.com/profile.php?id=61574109267945"
             target="_blank"
             rel="noopener noreferrer"
@@ -86,6 +92,13 @@ export default function Header() {
             <Link href="/about" onClick={() => setMobileOpen(false)} className="text-base font-medium text-white/90 hover:text-gold">About</Link>
             <Link href="/service-areas" onClick={() => setMobileOpen(false)} className="text-base font-medium text-white/90 hover:text-gold">Service Areas</Link>
             <Link href="/contact" onClick={() => setMobileOpen(false)} className="text-base font-medium text-white/90 hover:text-gold">Contact</Link>
+            <a
+              href="tel:16467646839"
+              onClick={() => setMobileOpen(false)}
+              className="mt-2 text-base font-medium text-white/90 hover:text-gold"
+            >
+              (646) 764-6839
+            </a>
             <Link
               href="/contact"
               onClick={() => setMobileOpen(false)}

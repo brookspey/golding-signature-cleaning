@@ -25,23 +25,33 @@ const neighborhoods = [
 const services = [
   {
     name: "Standard Cleaning",
+    slug: "standard-cleaning",
     description:
       "Regular maintenance cleaning that keeps your Delray Beach home fresh between deeper sessions. Perfect for busy homeowners who would rather be walking Atlantic Avenue than scrubbing floors.",
   },
   {
     name: "Deep Cleaning",
+    slug: "deep-cleaning",
     description:
       "An intensive clean covering baseboards, ceiling fans, inside appliances, and every overlooked surface. Ideal for seasonal residents returning to Delray or preparing a home for the season.",
   },
   {
     name: "Airbnb / Move-Out Cleaning",
+    slug: "airbnb-cleaning",
     description:
       "Quick-turnaround cleaning for vacation rentals and properties in transition. We handle guest-ready preparation so your listing maintains five-star reviews.",
   },
   {
     name: "Custom Focus Cleaning",
+    slug: "custom-cleaning",
     description:
       "Choose the rooms or tasks that need the most attention. From post-renovation dust removal to pre-event preparation, we build the clean around your specific situation.",
+  },
+  {
+    name: "Office Cleaning",
+    slug: "office-cleaning",
+    description:
+      "Reliable office cleaning for Delray Beach businesses along Atlantic Avenue and the Congress Avenue corridor. We keep your workspace polished and professional so you can focus on your clients.",
   },
 ];
 
@@ -115,9 +125,10 @@ export default function DelrayBeachPage() {
           </h2>
           <div className="grid gap-6 md:grid-cols-2">
             {services.map((service) => (
-              <div
+              <Link
                 key={service.name}
-                className="rounded-2xl border border-gray-100 bg-white p-6 shadow-sm"
+                href={`/service-areas/delray-beach/${service.slug}`}
+                className="rounded-2xl border border-gray-100 bg-white p-6 shadow-sm transition-shadow hover:shadow-md"
               >
                 <h3 className="mb-2 text-lg font-bold text-navy">
                   {service.name}
@@ -125,7 +136,10 @@ export default function DelrayBeachPage() {
                 <p className="text-sm leading-relaxed text-gray-600">
                   {service.description}
                 </p>
-              </div>
+                <span className="mt-3 inline-block text-sm font-semibold text-gold">
+                  Learn more &rarr;
+                </span>
+              </Link>
             ))}
           </div>
         </div>

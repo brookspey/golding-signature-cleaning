@@ -25,23 +25,33 @@ const neighborhoods = [
 const services = [
   {
     name: "Standard Cleaning",
+    slug: "standard-cleaning",
     description:
       "Dependable weekly or biweekly cleaning designed for Boynton Beach families and retirees. We maintain every room so your home stays comfortable and welcoming between visits.",
   },
   {
     name: "Deep Cleaning",
+    slug: "deep-cleaning",
     description:
       "A comprehensive clean that covers areas often missed during routine maintenance — inside cabinets, behind appliances, under furniture, and along baseboards throughout your home.",
   },
   {
     name: "Airbnb / Move-Out Cleaning",
+    slug: "airbnb-cleaning",
     description:
       "Thorough cleaning for rental turnovers and real estate transactions. We prepare properties for new occupants with a detailed checklist that covers every room and surface.",
   },
   {
     name: "Custom Focus Cleaning",
+    slug: "custom-cleaning",
     description:
       "Direct our team to the areas that matter most to you. Whether it's a post-holiday kitchen reset or a garage-to-guest-room conversion, we handle the specific tasks you need done.",
+  },
+  {
+    name: "Office Cleaning",
+    slug: "office-cleaning",
+    description:
+      "Professional office cleaning for businesses along Boynton Beach Boulevard and the Gateway Boulevard commercial district. We maintain clean, healthy workspaces that make a great impression on clients and employees.",
   },
 ];
 
@@ -117,9 +127,10 @@ export default function BoyntonBeachPage() {
           </h2>
           <div className="grid gap-6 md:grid-cols-2">
             {services.map((service) => (
-              <div
+              <Link
                 key={service.name}
-                className="rounded-2xl border border-gray-100 bg-white p-6 shadow-sm"
+                href={`/service-areas/boynton-beach/${service.slug}`}
+                className="rounded-2xl border border-gray-100 bg-white p-6 shadow-sm transition-shadow hover:shadow-md"
               >
                 <h3 className="mb-2 text-lg font-bold text-navy">
                   {service.name}
@@ -127,7 +138,10 @@ export default function BoyntonBeachPage() {
                 <p className="text-sm leading-relaxed text-gray-600">
                   {service.description}
                 </p>
-              </div>
+                <span className="mt-3 inline-block text-sm font-semibold text-gold">
+                  Learn more &rarr;
+                </span>
+              </Link>
             ))}
           </div>
         </div>

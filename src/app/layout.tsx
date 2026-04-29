@@ -78,7 +78,7 @@ const jsonLd = {
   url: "https://www.thegoldingagency.com",
   telephone: "+16467646839",
   email: "info@thegoldingagency.com",
-  image: "/images/logo.png",
+  image: "https://www.thegoldingagency.com/images/logo.png",
   address: {
     "@type": "PostalAddress",
     addressLocality: "West Palm Beach",
@@ -97,6 +97,8 @@ const jsonLd = {
     { "@type": "Place", name: "Palm Beach Gardens, FL" },
     { "@type": "Place", name: "Lake Worth, FL" },
     { "@type": "Place", name: "Royal Palm Beach, FL" },
+    { "@type": "Place", name: "Lantana, FL" },
+    { "@type": "Place", name: "Greenacres, FL" },
   ],
   openingHoursSpecification: {
     "@type": "OpeningHoursSpecification",
@@ -111,20 +113,10 @@ const jsonLd = {
   serviceType: [
     "House Cleaning", "Deep Cleaning", "Move-In Cleaning",
     "Move-Out Cleaning", "Airbnb Cleaning", "Residential Cleaning",
+    "Office Cleaning",
   ],
   description:
     "Professional residential cleaning services serving Palm Beach County, Florida.",
-  aggregateRating: {
-    "@type": "AggregateRating",
-    ratingValue: "5.0",
-    reviewCount: "3",
-    bestRating: "5",
-    worstRating: "1",
-  },
-  sameAs: [
-    "https://www.facebook.com/profile.php?id=61574109267945",
-    "https://www.instagram.com/goldingsignaturecleaning/",
-  ],
 };
 
 export default function RootLayout({
